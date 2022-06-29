@@ -1,0 +1,27 @@
+#!/bin/ksh
+
+d=$(date +%d)
+m=$(date +%m)
+y=$(date +%y)
+
+# parse leading zeroes
+d=${d#0}
+m=${m#0}
+
+(( yd=d-1 ))
+
+today=$m/$d/$y
+
+title="David Lynch's Weather Report $today"
+
+file=$d$m$y.webm
+
+if [ -e $file ] ; then
+    rm $file
+fi
+
+if yt-dlp -P "~/video/" -o "$file" "ytsearch1:$title" ; then
+    mpv ~/video/$file
+else
+    print "failed"
+fi
