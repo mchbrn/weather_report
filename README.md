@@ -5,3 +5,8 @@
 > -- Special Agent Dale Cooper
 
 A script that downloads and plays David Lynch's Weather Report.
+
+## Dependencies
+
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+- ksh
